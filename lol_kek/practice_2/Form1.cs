@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using lol_kek.practice_2;
 using Timer = System.Windows.Forms.Timer;
 
 namespace lol_kek
@@ -149,9 +150,9 @@ namespace lol_kek
         {
             adjacencyMatrix = new int[,]
             {
-            {0, 0, 1, 1, 0},
-            {0, 0, 0, 0, 0},
-            {1, 0, 0, 0, 1},
+            {0, 0, 0, 1, 0},
+            {0, 1, 0, 0, 0},
+            {1, 0, 0, 1, 1},
             {1, 0, 0, 0, 1},
             {0, 0, 1, 1, 0},
 

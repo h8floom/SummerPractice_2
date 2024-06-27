@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lol_kek
+namespace lol_kek.practice_2
 {
     public class QSort
     {

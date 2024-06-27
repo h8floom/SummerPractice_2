@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lol_kek;
+namespace lol_kek.practice_2;
 public class BFS
 {
     private int[,] adjacencyMatrix;
@@ -13,7 +13,7 @@ public class BFS
     public BFS(int[,] adjacencyMatrix)
     {
         this.adjacencyMatrix = adjacencyMatrix;
-        this.vertices = adjacencyMatrix.GetLength(0);
+        vertices = adjacencyMatrix.GetLength(0);
     }
 
     public List<int> BreadthFirstSearch(int startVertex)
