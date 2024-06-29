@@ -1,29 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace lol_kek
 {
     public class QSort
     {
         public event Action<int[]> StepCompleted;
+        public event Action<int> SortCompleted; // Событие для завершения сортировки
 
         private int[] array;
         private Stack<Tuple<int, int>> stack = new Stack<Tuple<int, int>>();
+        public int StepCount { get; private set; } // Свойство для счётчика шагов
 
         public void StartSort(int[] array)
         {
             this.array = array;
             stack.Clear();
             stack.Push(Tuple.Create(0, array.Length - 1));
+            StepCount = 0; // Сброс счётчика шагов
         }
 
         public bool SortStep()
         {
             if (stack.Count == 0)
             {
+                SortCompleted?.Invoke(StepCount); // Вызов события при завершении сортировки
                 return false;
             }
 
@@ -38,6 +39,7 @@ namespace lol_kek
                 stack.Push(Tuple.Create(pivot + 1, right));
             }
 
+            StepCount++; // Увеличение счётчика шагов
             StepCompleted?.Invoke(array);
             return stack.Count > 0;
         }

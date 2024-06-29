@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace lol_kek;
+﻿namespace lol_kek;
 public class BFS
 {
     private int[,] adjacencyMatrix;

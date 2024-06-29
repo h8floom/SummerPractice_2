@@ -1,4 +1,5 @@
 using System;
+using System.Drawing; // Р”Р»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ Point
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
 
@@ -10,13 +11,20 @@ namespace lol_kek
         int[] array = new int[10];
         QSort qSort = new QSort();
         Timer sortTimer = new Timer();
+        Label labelStepCount = new Label(); // РќРѕРІС‹Р№ Label РґР»СЏ РІС‹РІРѕРґР° РєРѕР»РёС‡РµСЃС‚РІР° С€Р°РіРѕРІ
 
         public Form1()
         {
             InitializeComponent();
             qSort.StepCompleted += OnSortStepCompleted;
-            sortTimer.Interval = 1000; // (1 секунда)
+            qSort.SortCompleted += OnSortCompleted; // РџРѕРґРїРёСЃРєР° РЅР° СЃРѕР±С‹С‚РёРµ SortCompleted
+            sortTimer.Interval = 1000; // (1 СЃРµРєСѓРЅРґР°)
             sortTimer.Tick += OnSortStep;
+
+            // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ Label РґР»СЏ РІС‹РІРѕРґР° РєРѕР»РёС‡РµСЃС‚РІР° С€Р°РіРѕРІ
+            labelStepCount.AutoSize = true;
+            labelStepCount.Location = new Point(10, 200);
+            this.Controls.Add(labelStepCount);
         }
 
         private void buttonAddFront_Click(object sender, EventArgs e)
@@ -24,7 +32,7 @@ namespace lol_kek
             Random random = new Random();
             int value1 = random.Next(1, 100);
             deque.AddFront(value1);
-            MessageBox.Show($"Добавлено {value1} в голову.");
+            MessageBox.Show($"Added {value1} to front.");
             UpdateTextBox();
         }
 
@@ -33,7 +41,7 @@ namespace lol_kek
             Random random = new Random();
             int value = random.Next(1, 100);
             deque.AddBack(value);
-            MessageBox.Show($"Добавлено {value} в хвост.");
+            MessageBox.Show($"Added {value} to back.");
             UpdateTextBox();
         }
 
@@ -42,7 +50,7 @@ namespace lol_kek
             try
             {
                 deque.RemoveFront();
-                MessageBox.Show($"Удалено из головы.");
+                MessageBox.Show($"Removed from front.");
             }
             catch (InvalidOperationException ex)
             {
@@ -56,7 +64,7 @@ namespace lol_kek
             try
             {
                 deque.RemoveBack();
-                MessageBox.Show($"Удалено из хвоста.");
+                MessageBox.Show($"Removed from back.");
             }
             catch (InvalidOperationException ex)
             {
@@ -84,6 +92,7 @@ namespace lol_kek
         {
             qSort.StartSort(array);
             sortTimer.Start();
+            
         }
 
         private void OnSortStepCompleted(int[] array)
@@ -96,7 +105,16 @@ namespace lol_kek
             if (!qSort.SortStep())
             {
                 sortTimer.Stop();
+
+                MessageBox.Show($"Sort completed in {qSort.StepCount} steps.");
             }
+            labelSteps.Text = $"Steps: {qSort.StepCount}";
+
+        }
+
+        private void OnSortCompleted(int steps)
+        {
+            MessageBox.Show($"Sort completed in {steps} steps.");
         }
 
         private void UpdateArrayTextBox()
@@ -114,8 +132,7 @@ namespace lol_kek
 
         private void DisplayBFSResult()
         {
-
-            // отрисовка матрицы 
+            // РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РјР°С‚СЂРёС†С‹
             for (int i = 0; i < adjacencyMatrix.GetLength(0); i++)
             {
                 for (int j = 0; j < adjacencyMatrix.GetLength(1); j++)
@@ -129,12 +146,12 @@ namespace lol_kek
             }
 
             Label labelResult = new Label();
-            labelResult.Text = "Результат обхода графа в ширину:";
+            labelResult.Text = "Р РµР·СѓР»СЊС‚Р°С‚ РѕР±С…РѕРґР° РІ С€РёСЂРёРЅСѓ:";
             labelResult.AutoSize = true;
             labelResult.Location = new Point(40, adjacencyMatrix.GetLength(0) * 22 + 2);
             panelBFS.Controls.Add(labelResult);
 
-            // отрисовка результата BFS
+            // РћС‚РѕР±СЂР°Р¶РµРЅРёРµ СЂРµР·СѓР»СЊС‚Р°С‚Р° BFS
             for (int i = 0; i < bfsResult.Count; i++)
             {
                 Label labelVertex = new Label();
@@ -149,16 +166,14 @@ namespace lol_kek
         {
             adjacencyMatrix = new int[,]
             {
-            {0, 0, 1, 1, 0},
-            {0, 0, 0, 0, 0},
-            {1, 0, 0, 0, 1},
-            {1, 0, 0, 0, 1},
-            {0, 0, 1, 1, 0},
-
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0},
+                {1, 0, 0, 1, 0},
+                {0, 0, 1, 0, 0},
             };
 
             BFS bfs = new BFS(adjacencyMatrix);
-            bfsResult = bfs.BreadthFirstSearch(0); // начинаю поиск с 0 вершины
+            bfsResult = bfs.BreadthFirstSearch(0);
 
             DisplayBFSResult();
         }
