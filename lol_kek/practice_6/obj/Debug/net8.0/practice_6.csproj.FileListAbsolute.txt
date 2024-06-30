@@ -1,0 +1,14 @@
+C:\Users\floom\Desktop\practice_6\bin\Debug\net8.0\practice_6.exe
+C:\Users\floom\Desktop\practice_6\bin\Debug\net8.0\practice_6.deps.json
+C:\Users\floom\Desktop\practice_6\bin\Debug\net8.0\practice_6.runtimeconfig.json
+C:\Users\floom\Desktop\practice_6\bin\Debug\net8.0\practice_6.dll
+C:\Users\floom\Desktop\practice_6\bin\Debug\net8.0\practice_6.pdb
+C:\Users\floom\Desktop\practice_6\obj\Debug\net8.0\practice_6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\floom\Desktop\practice_6\obj\Debug\net8.0\practice_6.AssemblyInfoInputs.cache
+C:\Users\floom\Desktop\practice_6\obj\Debug\net8.0\practice_6.AssemblyInfo.cs
+C:\Users\floom\Desktop\practice_6\obj\Debug\net8.0\practice_6.csproj.CoreCompileInputs.cache
+C:\Users\floom\Desktop\practice_6\obj\Debug\net8.0\practice_6.dll
+C:\Users\floom\Desktop\practice_6\obj\Debug\net8.0\refint\practice_6.dll
+C:\Users\floom\Desktop\practice_6\obj\Debug\net8.0\practice_6.pdb
+C:\Users\floom\Desktop\practice_6\obj\Debug\net8.0\practice_6.genruntimeconfig.cache
+C:\Users\floom\Desktop\practice_6\obj\Debug\net8.0\ref\practice_6.dll
