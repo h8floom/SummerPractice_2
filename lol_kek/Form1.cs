@@ -1,5 +1,5 @@
 using System;
-using System.Drawing; // Для использования Point
+using System.Drawing; 
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
 
@@ -11,14 +11,14 @@ namespace lol_kek
         int[] array = new int[10];
         QSort qSort = new QSort();
         Timer sortTimer = new Timer();
-        Label labelStepCount = new Label(); // Новый Label для вывода количества шагов
+        Label labelStepCount = new Label(); 
 
         public Form1()
         {
             InitializeComponent();
             qSort.StepCompleted += OnSortStepCompleted;
-            qSort.SortCompleted += OnSortCompleted; // Подписка на событие SortCompleted
-            sortTimer.Interval = 1000; // (1 секунда)
+            qSort.SortCompleted += OnSortCompleted;
+            sortTimer.Interval = 1000; 
             sortTimer.Tick += OnSortStep;
 
             // Инициализация Label для вывода количества шагов

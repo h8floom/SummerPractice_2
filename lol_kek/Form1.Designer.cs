@@ -40,6 +40,7 @@
             buttonRemoveFront = new Button();
             buttonAddFront = new Button();
             panel2 = new Panel();
+            labelSteps = new Label();
             label3 = new Label();
             textBoxArrayAfterSort = new TextBox();
             buttonQuickSort = new Button();
@@ -52,7 +53,6 @@
             panelBFS = new Panel();
             label4 = new Label();
             richTextBoxBFSDescription = new RichTextBox();
-            labelSteps = new Label();
             panel1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -68,59 +68,52 @@
             panel1.Controls.Add(textBoxDeque);
             panel1.Controls.Add(groupBox2);
             panel1.Controls.Add(groupBox1);
-            panel1.Location = new Point(22, 26);
-            panel1.Margin = new Padding(6, 6, 6, 6);
+            panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(470, 907);
+            panel1.Size = new Size(254, 426);
             panel1.TabIndex = 0;
             // 
             // richTextBoxDequeDescription
             // 
-            richTextBoxDequeDescription.Location = new Point(6, 755);
-            richTextBoxDequeDescription.Margin = new Padding(6, 6, 6, 6);
+            richTextBoxDequeDescription.Location = new Point(3, 354);
             richTextBoxDequeDescription.Name = "richTextBoxDequeDescription";
-            richTextBoxDequeDescription.Size = new Size(414, 143);
+            richTextBoxDequeDescription.Size = new Size(225, 69);
             richTextBoxDequeDescription.TabIndex = 5;
             richTextBoxDequeDescription.Text = "Двусторонняя очередь (Deque) — это структура данных, которая сочетает в себе особенности стека и очереди. Она позволяет добавлять и удалять элементы как с начала, так и с конца структуры данных.";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(150, 717);
-            label1.Margin = new Padding(6, 0, 6, 0);
+            label1.Location = new Point(81, 336);
             label1.Name = "label1";
-            label1.Size = new Size(124, 32);
+            label1.Size = new Size(62, 15);
             label1.TabIndex = 4;
             label1.Text = "Описание";
             // 
             // textBoxDeque
             // 
-            textBoxDeque.Location = new Point(11, 521);
-            textBoxDeque.Margin = new Padding(6, 6, 6, 6);
+            textBoxDeque.Location = new Point(6, 244);
             textBoxDeque.Multiline = true;
             textBoxDeque.Name = "textBoxDeque";
-            textBoxDeque.Size = new Size(414, 143);
+            textBoxDeque.Size = new Size(225, 69);
             textBoxDeque.TabIndex = 3;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(buttonRemoveBack);
             groupBox2.Controls.Add(buttonAddBack);
-            groupBox2.Location = new Point(6, 288);
-            groupBox2.Margin = new Padding(6, 6, 6, 6);
+            groupBox2.Location = new Point(3, 135);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(6, 6, 6, 6);
-            groupBox2.Size = new Size(418, 220);
+            groupBox2.Size = new Size(225, 103);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Конец";
             // 
             // buttonRemoveBack
             // 
-            buttonRemoveBack.Location = new Point(215, 73);
-            buttonRemoveBack.Margin = new Padding(6, 6, 6, 6);
+            buttonRemoveBack.Location = new Point(116, 34);
             buttonRemoveBack.Name = "buttonRemoveBack";
-            buttonRemoveBack.Size = new Size(191, 94);
+            buttonRemoveBack.Size = new Size(103, 44);
             buttonRemoveBack.TabIndex = 1;
             buttonRemoveBack.Text = "Удалить";
             buttonRemoveBack.UseVisualStyleBackColor = true;
@@ -128,10 +121,9 @@
             // 
             // buttonAddBack
             // 
-            buttonAddBack.Location = new Point(11, 73);
-            buttonAddBack.Margin = new Padding(6, 6, 6, 6);
+            buttonAddBack.Location = new Point(6, 34);
             buttonAddBack.Name = "buttonAddBack";
-            buttonAddBack.Size = new Size(175, 94);
+            buttonAddBack.Size = new Size(94, 44);
             buttonAddBack.TabIndex = 0;
             buttonAddBack.Text = "Добавить";
             buttonAddBack.UseVisualStyleBackColor = true;
@@ -141,21 +133,18 @@
             // 
             groupBox1.Controls.Add(buttonRemoveFront);
             groupBox1.Controls.Add(buttonAddFront);
-            groupBox1.Location = new Point(6, 55);
-            groupBox1.Margin = new Padding(6, 6, 6, 6);
+            groupBox1.Location = new Point(3, 26);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(6, 6, 6, 6);
-            groupBox1.Size = new Size(418, 220);
+            groupBox1.Size = new Size(225, 103);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Начало";
             // 
             // buttonRemoveFront
             // 
-            buttonRemoveFront.Location = new Point(215, 73);
-            buttonRemoveFront.Margin = new Padding(6, 6, 6, 6);
+            buttonRemoveFront.Location = new Point(116, 34);
             buttonRemoveFront.Name = "buttonRemoveFront";
-            buttonRemoveFront.Size = new Size(191, 94);
+            buttonRemoveFront.Size = new Size(103, 44);
             buttonRemoveFront.TabIndex = 1;
             buttonRemoveFront.Text = "Удалить";
             buttonRemoveFront.UseVisualStyleBackColor = true;
@@ -163,10 +152,9 @@
             // 
             // buttonAddFront
             // 
-            buttonAddFront.Location = new Point(11, 73);
-            buttonAddFront.Margin = new Padding(6, 6, 6, 6);
+            buttonAddFront.Location = new Point(6, 34);
             buttonAddFront.Name = "buttonAddFront";
-            buttonAddFront.Size = new Size(175, 94);
+            buttonAddFront.Size = new Size(94, 44);
             buttonAddFront.TabIndex = 0;
             buttonAddFront.Text = "Добавить";
             buttonAddFront.UseVisualStyleBackColor = true;
@@ -183,36 +171,42 @@
             panel2.Controls.Add(textBoxArrayBeforeSort);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(richTextBoxQuickSortDescription);
-            panel2.Location = new Point(500, 26);
-            panel2.Margin = new Padding(6, 6, 6, 6);
+            panel2.Location = new Point(269, 12);
             panel2.Name = "panel2";
-            panel2.Size = new Size(474, 907);
+            panel2.Size = new Size(256, 426);
             panel2.TabIndex = 1;
+            // 
+            // labelSteps
+            // 
+            labelSteps.AutoSize = true;
+            labelSteps.Location = new Point(95, 252);
+            labelSteps.Margin = new Padding(2, 0, 2, 0);
+            labelSteps.Name = "labelSteps";
+            labelSteps.Size = new Size(38, 15);
+            labelSteps.TabIndex = 13;
+            labelSteps.Text = "Steps:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(50, 384);
-            label3.Margin = new Padding(6, 0, 6, 0);
+            label3.Location = new Point(27, 180);
             label3.Name = "label3";
-            label3.Size = new Size(407, 32);
+            label3.Size = new Size(204, 15);
             label3.TabIndex = 12;
             label3.Text = "Массив после быстрой сортировки";
             // 
             // textBoxArrayAfterSort
             // 
-            textBoxArrayAfterSort.Location = new Point(7, 422);
-            textBoxArrayAfterSort.Margin = new Padding(6, 6, 6, 6);
+            textBoxArrayAfterSort.Location = new Point(4, 198);
             textBoxArrayAfterSort.Name = "textBoxArrayAfterSort";
-            textBoxArrayAfterSort.Size = new Size(466, 39);
+            textBoxArrayAfterSort.Size = new Size(253, 23);
             textBoxArrayAfterSort.TabIndex = 11;
             // 
             // buttonQuickSort
             // 
-            buttonQuickSort.Location = new Point(149, 252);
-            buttonQuickSort.Margin = new Padding(6, 6, 6, 6);
+            buttonQuickSort.Location = new Point(80, 118);
             buttonQuickSort.Name = "buttonQuickSort";
-            buttonQuickSort.Size = new Size(167, 49);
+            buttonQuickSort.Size = new Size(90, 23);
             buttonQuickSort.TabIndex = 10;
             buttonQuickSort.Text = "Сортировать";
             buttonQuickSort.UseVisualStyleBackColor = true;
@@ -220,10 +214,9 @@
             // 
             // buttonFillArray
             // 
-            buttonFillArray.Location = new Point(113, 128);
-            buttonFillArray.Margin = new Padding(6, 6, 6, 6);
+            buttonFillArray.Location = new Point(61, 60);
             buttonFillArray.Name = "buttonFillArray";
-            buttonFillArray.Size = new Size(243, 49);
+            buttonFillArray.Size = new Size(131, 23);
             buttonFillArray.TabIndex = 9;
             buttonFillArray.Text = "Заполнить массив";
             buttonFillArray.UseVisualStyleBackColor = true;
@@ -231,28 +224,25 @@
             // 
             // textBoxArrayBeforeSort
             // 
-            textBoxArrayBeforeSort.Location = new Point(7, 190);
-            textBoxArrayBeforeSort.Margin = new Padding(6, 6, 6, 6);
+            textBoxArrayBeforeSort.Location = new Point(4, 89);
             textBoxArrayBeforeSort.Name = "textBoxArrayBeforeSort";
-            textBoxArrayBeforeSort.Size = new Size(466, 39);
+            textBoxArrayBeforeSort.Size = new Size(253, 23);
             textBoxArrayBeforeSort.TabIndex = 8;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(178, 717);
-            label2.Margin = new Padding(6, 0, 6, 0);
+            label2.Location = new Point(96, 336);
             label2.Name = "label2";
-            label2.Size = new Size(124, 32);
+            label2.Size = new Size(62, 15);
             label2.TabIndex = 7;
             label2.Text = "Описание";
             // 
             // richTextBoxQuickSortDescription
             // 
-            richTextBoxQuickSortDescription.Location = new Point(6, 755);
-            richTextBoxQuickSortDescription.Margin = new Padding(6, 6, 6, 6);
+            richTextBoxQuickSortDescription.Location = new Point(3, 354);
             richTextBoxQuickSortDescription.Name = "richTextBoxQuickSortDescription";
-            richTextBoxQuickSortDescription.Size = new Size(466, 143);
+            richTextBoxQuickSortDescription.Size = new Size(253, 69);
             richTextBoxQuickSortDescription.TabIndex = 6;
             richTextBoxQuickSortDescription.Text = resources.GetString("richTextBoxQuickSortDescription.Text");
             // 
@@ -263,18 +253,16 @@
             panel3.Controls.Add(panelBFS);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(richTextBoxBFSDescription);
-            panel3.Location = new Point(986, 26);
-            panel3.Margin = new Padding(6, 6, 6, 6);
+            panel3.Location = new Point(531, 12);
             panel3.Name = "panel3";
-            panel3.Size = new Size(476, 907);
+            panel3.Size = new Size(257, 426);
             panel3.TabIndex = 2;
             // 
             // buttonStartBFS
             // 
-            buttonStartBFS.Location = new Point(54, 521);
-            buttonStartBFS.Margin = new Padding(6, 6, 6, 6);
+            buttonStartBFS.Location = new Point(29, 244);
             buttonStartBFS.Name = "buttonStartBFS";
-            buttonStartBFS.Size = new Size(349, 77);
+            buttonStartBFS.Size = new Size(188, 36);
             buttonStartBFS.TabIndex = 10;
             buttonStartBFS.Text = "Обход графа в ширину";
             buttonStartBFS.UseVisualStyleBackColor = true;
@@ -283,49 +271,36 @@
             // panelBFS
             // 
             panelBFS.BorderStyle = BorderStyle.Fixed3D;
-            panelBFS.Location = new Point(6, 128);
-            panelBFS.Margin = new Padding(6, 6, 6, 6);
+            panelBFS.Location = new Point(3, 60);
             panelBFS.Name = "panelBFS";
-            panelBFS.Size = new Size(463, 339);
+            panelBFS.Size = new Size(251, 161);
             panelBFS.TabIndex = 9;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(176, 717);
-            label4.Margin = new Padding(6, 0, 6, 0);
+            label4.Location = new Point(95, 336);
             label4.Name = "label4";
-            label4.Size = new Size(124, 32);
+            label4.Size = new Size(62, 15);
             label4.TabIndex = 8;
             label4.Text = "Описание";
             // 
             // richTextBoxBFSDescription
             // 
-            richTextBoxBFSDescription.Location = new Point(6, 755);
-            richTextBoxBFSDescription.Margin = new Padding(6, 6, 6, 6);
+            richTextBoxBFSDescription.Location = new Point(3, 354);
             richTextBoxBFSDescription.Name = "richTextBoxBFSDescription";
-            richTextBoxBFSDescription.Size = new Size(463, 143);
+            richTextBoxBFSDescription.Size = new Size(251, 69);
             richTextBoxBFSDescription.TabIndex = 7;
             richTextBoxBFSDescription.Text = resources.GetString("richTextBoxBFSDescription.Text");
             // 
-            // labelSteps
-            // 
-            labelSteps.AutoSize = true;
-            labelSteps.Location = new Point(177, 537);
-            labelSteps.Name = "labelSteps";
-            labelSteps.Size = new Size(78, 32);
-            labelSteps.TabIndex = 13;
-            labelSteps.Text = "label5";
-            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1486, 960);
+            ClientSize = new Size(800, 450);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Margin = new Padding(6, 6, 6, 6);
             Name = "Form1";
             Text = "Form1";
             panel1.ResumeLayout(false);
