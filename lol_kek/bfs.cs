@@ -27,7 +27,7 @@ public class DFS
                 visited[currentVertex] = true;
                 result.Add(currentVertex);
 
-                for (int i = vertices - 1; i >= 0; i--)
+                for (int i = 0; i < vertices; i++)
                 {
                     if (adjacencyMatrix[currentVertex, i] == 1 && !visited[i])
                     {
