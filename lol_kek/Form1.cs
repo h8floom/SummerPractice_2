@@ -128,9 +128,9 @@ namespace lol_kek
         }
 
         private int[,] adjacencyMatrix;
-        private List<int> bfsResult;
+        private List<int> dfsResult;
 
-        private void DisplayBFSResult()
+        private void DisplayDFSResult()
         {
             // Отображение матрицы
             for (int i = 0; i < adjacencyMatrix.GetLength(0); i++)
@@ -141,41 +141,41 @@ namespace lol_kek
                     labelValue.Text = adjacencyMatrix[i, j].ToString();
                     labelValue.AutoSize = true;
                     labelValue.Location = new Point(50 + j * 22, i * 22 + 2);
-                    panelBFS.Controls.Add(labelValue);
+                    panelDFS.Controls.Add(labelValue);
                 }
             }
 
             Label labelResult = new Label();
-            labelResult.Text = "Результат обхода в ширину:";
+            labelResult.Text = "Результат обхода в глубину:";
             labelResult.AutoSize = true;
             labelResult.Location = new Point(40, adjacencyMatrix.GetLength(0) * 22 + 2);
-            panelBFS.Controls.Add(labelResult);
+            panelDFS.Controls.Add(labelResult);
 
-            // Отображение результата BFS
-            for (int i = 0; i < bfsResult.Count; i++)
+            // Отображение результата DFS
+            for (int i = 0; i < dfsResult.Count; i++)
             {
                 Label labelVertex = new Label();
-                labelVertex.Text = bfsResult[i].ToString();
+                labelVertex.Text = dfsResult[i].ToString();
                 labelVertex.AutoSize = true;
                 labelVertex.Location = new Point(50 + i * 22, adjacencyMatrix.GetLength(0) * 22 + 22);
-                panelBFS.Controls.Add(labelVertex);
+                panelDFS.Controls.Add(labelVertex);
             }
         }
 
         private void buttonStartBFS_Click(object sender, EventArgs e)
         {
             adjacencyMatrix = new int[,]
-            {
-                {0, 0, 1, 0, 0},
-                {0, 0, 0, 0, 0},
-                {1, 0, 0, 1, 0},
-                {0, 0, 1, 0, 0},
+            {        /*A*/ /*B*/ /*C*/ /*D*/
+                /*A*/{ 0,    1 ,   0 ,   1 },
+                /*B*/{ 1 ,   0 ,   1 ,   0 },
+                /*C*/{ 0 ,   1 ,   0 ,   0 },
+                /*D*/{ 1  ,  0 ,   0 ,   0 },
             };
 
-            BFS bfs = new BFS(adjacencyMatrix);
-            bfsResult = bfs.BreadthFirstSearch(0);
+            DFS dfs = new DFS(adjacencyMatrix);
+            dfsResult = dfs.DepthFirstSearch(0);
 
-            DisplayBFSResult();
+            DisplayDFSResult();
         }
     }
 }

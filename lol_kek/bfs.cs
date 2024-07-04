@@ -1,36 +1,38 @@
 ﻿namespace lol_kek;
-public class BFS
+public class DFS
 {
     private int[,] adjacencyMatrix;
     private int vertices;
 
-    public BFS(int[,] adjacencyMatrix)
+    public DFS(int[,] adjacencyMatrix)
     {
         this.adjacencyMatrix = adjacencyMatrix;
         this.vertices = adjacencyMatrix.GetLength(0);
     }
 
-    public List<int> BreadthFirstSearch(int startVertex)
+    public List<int> DepthFirstSearch(int startVertex)
     {
         bool[] visited = new bool[vertices];
         List<int> result = new List<int>();
-        Queue<int> queue = new Queue<int>();
+        Stack<int> stack = new Stack<int>();
 
-        visited[startVertex] = true;
-        queue.Enqueue(startVertex);
+        stack.Push(startVertex);
 
-        while (queue.Count > 0)
+        while (stack.Count > 0)
         {
-            int currentVertex = queue.Dequeue();
-            result.Add(currentVertex);
+            int currentVertex = stack.Pop();
 
-            for (int i = 0; i < vertices; i++)
+            if (!visited[currentVertex])
             {
-                if (adjacencyMatrix[currentVertex, i] == 1 && !visited[i])
-                {
-                    visited[i] = true;
-                    queue.Enqueue(i);
+                visited[currentVertex] = true;
+                result.Add(currentVertex);
 
+                for (int i = vertices - 1; i >= 0; i--)
+                {
+                    if (adjacencyMatrix[currentVertex, i] == 1 && !visited[i])
+                    {
+                        stack.Push(i);
+                    }
                 }
             }
         }
@@ -38,3 +40,4 @@ public class BFS
         return result;
     }
 }
+
