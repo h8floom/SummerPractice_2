@@ -45,7 +45,7 @@ namespace lol_kek.practice_4
                 int filledRowIndex = dataGridView1.Rows.Add(year, prisoners, "Тюрьма заполнена", prisoners);
                 dataGridView1.Rows[filledRowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.Yellow;
 
-                MessageBox.Show($"Тюрьма заполнится полностью в {year} году");
+                MessageBox.Show($"Тюрьма заполнится полностью в {year} году, так как кол-во заключенных ({prisoners} превысило 15000)");
             }
             else
             {
