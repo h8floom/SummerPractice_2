@@ -6,6 +6,7 @@ namespace lol_kek
     {
         private List<OvalAndSquare> figures = new List<OvalAndSquare>();
         private List<Sofa> sofas = new List<Sofa>();
+        private Color selectedColor;
 
         public Form3()
         {
@@ -14,41 +15,64 @@ namespace lol_kek
 
         private void buttonCreateObject_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBoxWidth.Text) ||
-                string.IsNullOrWhiteSpace(textBoxHeight.Text) ||
-                string.IsNullOrWhiteSpace(textBoxColor.Text))
-            {
-                MessageBox.Show("Пожалуйста, заполните все поля!");
-                return;
-            }
+            //if (string.IsNullOrWhiteSpace(textBoxWidth.Text) ||
+            //    string.IsNullOrWhiteSpace(textBoxHeight.Text) ||
+            //    comboBoxColor.SelectedItem == null)
+            //{
+            //    MessageBox.Show("Пожалуйста, заполните все поля!");
+            //    return;
+            //}
 
             int width = int.Parse(textBoxWidth.Text);
             int height = int.Parse(textBoxHeight.Text);
-            string color = textBoxColor.Text;
+            string colorName = comboBoxColor.Text;
 
             Sofa newSofa = new Sofa();
             newSofa.SetWidth(width);
             newSofa.SetHeight(height);
-            newSofa.SetColor(color);
+            newSofa.SetColor(colorName);
 
             sofas.Add(newSofa);
         }
 
         private void buttonShow_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBoxWidth.Text) ||
-                string.IsNullOrWhiteSpace(textBoxHeight.Text) ||
-                string.IsNullOrWhiteSpace(textBoxColor.Text))
-            {
-                MessageBox.Show("Пожалуйста, заполните все поля!");
-                return;
-            }
+            //if (string.IsNullOrWhiteSpace(textBoxWidth.Text) ||
+            //    string.IsNullOrWhiteSpace(textBoxHeight.Text) ||
+            //    string.IsNullOrWhiteSpace(textBoxColor.Text))
+            //{
+            //    MessageBox.Show("Пожалуйста, заполните все поля!");
+            //    return;
+            //}
 
             listBoxSofa.Items.Clear();
             foreach (var sofa in sofas)
             {
                 listBoxSofa.Items.Add(sofa.ToString());
             }
+        }
+        
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            string curIndex = listBoxSofa.SelectedItems.ToString();
+            int index = listBoxSofa.FindString(curIndex);
+
+            sofas.RemoveAt(index+1);
+            //if (int.TryParse(textBoxDelete.Text, out int indToDel))
+            //{
+            //    if (indToDel >= 0 && indToDel < sofas.Count)
+            //    {
+            //        sofas.RemoveAt(indToDel);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Некорректный индекс. Пожалуйста, введите правильный индекс.");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Пожалуйста, введите корректный индекс.");
+            //}
         }
 
         private void buttonCreateOval_Click(object sender, EventArgs e)
@@ -64,12 +88,18 @@ namespace lol_kek
             int width = int.Parse(textBoxOvalWidth.Text);
             int height = int.Parse(textBoxOvalHeight.Text);
 
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                selectedColor = colorDialog1.Color; 
+            }
+
             Oval newOval = new Oval
             {
                 Width = width,
                 Height = height,
                 X = new Random().Next(pictureBoxFigures.Width - width),
-                Y = new Random().Next(pictureBoxFigures.Height - height)
+                Y = new Random().Next(pictureBoxFigures.Height - height),
+                Color = selectedColor
             };
 
             figures.Add(newOval);
@@ -85,11 +115,17 @@ namespace lol_kek
 
             int sideLength = int.Parse(textBoxSquareSize.Text);
 
+            if (colorDialog2.ShowDialog() == DialogResult.OK)
+            {
+                selectedColor = colorDialog2.Color; 
+            }
+
             FilledSquare newSquare = new FilledSquare
             {
                 SideLength = sideLength,
                 X = new Random().Next(pictureBoxFigures.Width - sideLength),
-                Y = new Random().Next(pictureBoxFigures.Height - sideLength)
+                Y = new Random().Next(pictureBoxFigures.Height - sideLength),
+                Color = selectedColor 
             };
 
             figures.Add(newSquare);
@@ -140,5 +176,7 @@ namespace lol_kek
 
             this.textBoxCalculatorResult.Text = "Корень суммы: " + result;
         }
+
+        
     }
 }

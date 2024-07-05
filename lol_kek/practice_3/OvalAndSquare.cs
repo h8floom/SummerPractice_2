@@ -4,6 +4,7 @@ public abstract class OvalAndSquare
 {
     public int X { get; set; }
     public int Y { get; set; }
+    public Color Color { get; set; } 
     public abstract void Draw(Graphics g);
 }
 
@@ -14,7 +15,10 @@ public class Oval : OvalAndSquare
 
     public override void Draw(Graphics g)
     {
-        g.DrawEllipse(Pens.Black, X, Y, Width, Height);
+        using (Pen pen = new Pen(Color))
+        {
+            g.DrawEllipse(pen, X, Y, Width, Height); 
+        }
     }
 }
 
@@ -24,6 +28,9 @@ public class FilledSquare : OvalAndSquare
 
     public override void Draw(Graphics g)
     {
-        g.FillRectangle(Brushes.Black, X, Y, SideLength, SideLength);
+        using (Brush brush = new SolidBrush(Color))
+        {
+            g.FillRectangle(brush, X, Y, SideLength, SideLength); // Используем Color из базового класса
+        }
     }
 }
