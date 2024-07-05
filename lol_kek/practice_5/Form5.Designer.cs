@@ -34,46 +34,53 @@
             label2 = new Label();
             buttonCalculate = new Button();
             panel1 = new Panel();
+            textBoxLogs = new TextBox();
+            buttonShowLogs = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // textBoxX
             // 
-            textBoxX.Location = new Point(28, 51);
+            textBoxX.Location = new Point(52, 109);
+            textBoxX.Margin = new Padding(6, 6, 6, 6);
             textBoxX.Name = "textBoxX";
-            textBoxX.Size = new Size(100, 23);
+            textBoxX.Size = new Size(182, 39);
             textBoxX.TabIndex = 0;
             // 
             // textBoxN
             // 
-            textBoxN.Location = new Point(265, 51);
+            textBoxN.Location = new Point(492, 109);
+            textBoxN.Margin = new Padding(6, 6, 6, 6);
             textBoxN.Name = "textBoxN";
-            textBoxN.Size = new Size(100, 23);
+            textBoxN.Size = new Size(182, 39);
             textBoxN.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(40, 33);
+            label1.Location = new Point(74, 70);
+            label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(73, 15);
+            label1.Size = new Size(147, 32);
             label1.TabIndex = 3;
             label1.Text = "Значение X:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(245, 33);
+            label2.Location = new Point(455, 70);
+            label2.Margin = new Padding(6, 0, 6, 0);
             label2.Name = "label2";
-            label2.Size = new Size(148, 15);
+            label2.Size = new Size(292, 32);
             label2.TabIndex = 4;
             label2.Text = "Количество слагаемых n:";
             // 
             // buttonCalculate
             // 
-            buttonCalculate.Location = new Point(150, 117);
+            buttonCalculate.Location = new Point(279, 250);
+            buttonCalculate.Margin = new Padding(6, 6, 6, 6);
             buttonCalculate.Name = "buttonCalculate";
-            buttonCalculate.Size = new Size(99, 32);
+            buttonCalculate.Size = new Size(184, 68);
             buttonCalculate.TabIndex = 5;
             buttonCalculate.Text = "Посчитать";
             buttonCalculate.UseVisualStyleBackColor = true;
@@ -87,22 +94,45 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(textBoxN);
             panel1.Controls.Add(textBoxX);
-            panel1.Location = new Point(55, 41);
+            panel1.Location = new Point(102, 87);
+            panel1.Margin = new Padding(6, 6, 6, 6);
             panel1.Name = "panel1";
-            panel1.Size = new Size(413, 177);
+            panel1.Size = new Size(782, 506);
             panel1.TabIndex = 6;
+            // 
+            // textBoxLogs
+            // 
+            textBoxLogs.Location = new Point(952, 87);
+            textBoxLogs.Multiline = true;
+            textBoxLogs.Name = "textBoxLogs";
+            textBoxLogs.Size = new Size(623, 506);
+            textBoxLogs.TabIndex = 7;
+            // 
+            // buttonShowLogs
+            // 
+            buttonShowLogs.Location = new Point(1163, 636);
+            buttonShowLogs.Name = "buttonShowLogs";
+            buttonShowLogs.Size = new Size(235, 74);
+            buttonShowLogs.TabIndex = 8;
+            buttonShowLogs.Text = "Вывести логи";
+            buttonShowLogs.UseVisualStyleBackColor = true;
+            buttonShowLogs.Click += buttonShowLogs_Click;
             // 
             // Form5
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(555, 270);
+            ClientSize = new Size(1615, 925);
+            Controls.Add(buttonShowLogs);
+            Controls.Add(textBoxLogs);
             Controls.Add(panel1);
+            Margin = new Padding(6, 6, 6, 6);
             Name = "Form5";
             Text = "Form5";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -113,5 +143,7 @@
         private Label label2;
         private Button buttonCalculate;
         private Panel panel1;
+        private TextBox textBoxLogs;
+        private Button buttonShowLogs;
     }
 }

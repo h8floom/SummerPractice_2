@@ -50,6 +50,12 @@ namespace lol_kek.practice_5
 
             logger.LogInfo($"Завершение расчета: {DateTime.Now}");
         }
+
+        private void buttonShowLogs_Click(object sender, EventArgs e)
+        {
+            StreamReader reader = new StreamReader("C:\\Users\\floom\\source\\repos\\SummerPractice_2\\lol_kek\\bin\\Debug\\net8.0-windows\\log.txt");
+            textBoxLogs.Text = reader.ReadToEnd();
+        }
     }
 }
 
